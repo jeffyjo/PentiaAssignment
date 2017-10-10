@@ -1,0 +1,86 @@
+ <!-- Form -->
+ <div class="container-3 container-fluid">
+    <div class="form-header">
+        <h2 class="text-white">Få 10 gode råd om <br> digital transformation</h2>
+        <h4 class="text-white">Ja tak, jeg vil gerne høre mere om digital transformation</h4>
+    </div>
+    <form [formGroup]="contactFormReactive" (submit)="contactFormSubmitted()">
+        <div class="form-container">
+            <div class="form-row">
+              <input 
+                  class="form-item" 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  placeholder="Navn"
+                  formControlName="name">
+            </div>
+            <div *ngIf="!contactFormReactive.controls.name.valid 
+              && contactFormReactive.controls.name.touched" 
+              class="help-block">Udfyld venligst navn
+            </div>
+            <div class="form-row">
+              <input 
+                class="form-item no-spinners" 
+                type="number" 
+                name="mobile" 
+                id="mobile" 
+                placeholder="Mobil"
+                formControlName="mobile">
+              <input 
+                class="form-item" 
+                type="email" 
+                name="mail"     
+                id="mail" 
+                placeholder="e-mail"
+                formControlName="mail"> 
+                <div class="help-wrapper">
+                  <div 
+                    *ngIf="!contactFormReactive.controls.mobile.valid 
+                      && contactFormReactive.controls.mobile.touched" 
+                      class="help-block left">Nummeret skal være på 8 cifre
+                  </div>
+                  <div 
+                    *ngIf="!contactFormReactive.controls.mail.valid 
+                    && contactFormReactive.controls.mail.touched"
+                    class="help-block right">ex. mail@mail.dk
+                  </div>
+                </div> 
+            </div>
+            <div class="form-row">
+              <input 
+                class="form-item no-spinners" 
+                type="number" id="postCode" 
+                placeholder="Postnr."
+                name="postCode"
+                formControlName="postCode">
+              <input 
+                class="form-item" 
+                type="text" 
+                name="city" 
+                id="city" 
+                placeholder="By"
+                formControlName="city">
+              <div class="help-wrapper">
+                  <div 
+                    *ngIf="!contactFormReactive.get('postCode').valid 
+                    && contactFormReactive.get('postCode').touched"
+                      class="help-block left">Postnr. skal være 4 cifre
+                  </div>
+                  <div 
+                    *ngIf="!contactFormReactive.controls.city.valid 
+                    && contactFormReactive.controls.city.touched"
+                    class="help-block right">Udfyld venligst en by
+                  </div>
+                </div> 
+            </div>
+        </div>  
+        <div class="form-button-container">
+            <button id="form-button" type="submit">Ring mig op</button>
+        </div>
+    </form>
+    <div class="trophy-wrapper">
+        <img src="./assets/prize.svg" alt="trophy" class="trophy">
+        <p class="text-white">Pentia vinder pris for digital innovation 2017</p>
+    </div>
+  </div>

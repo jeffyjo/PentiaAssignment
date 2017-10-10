@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Gotham-xlight";
+    src: url("./../../assets/fonts/Gotham-xlight-webfont.woff2") format("woff2");
+}
+
+.help-block {
+    font-family: "Gotham-xlight";
+    font-style: italic;
+    color: #ffffff;
+    animation: help-block-in 0.7s ease-in forwards;
+}
+
+.help-wrapper {
+    width: 100%;
+    .left {
+        float: left;
+    }
+    
+    .right {
+        float: right;
+    }
+}
+
+@keyframes help-block-in {
+    from {
+        opacity: 0;
+        height: 0%;
+    }
+    to {
+        opacity: 1;
+        height: 100%;
+    }
+}

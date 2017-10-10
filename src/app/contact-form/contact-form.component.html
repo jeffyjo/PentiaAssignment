@@ -4,22 +4,61 @@
       <h2 class="text-white">Få 10 gode råd om <br> digital transformation</h2>
       <h4 class="text-white">Ja tak, jeg vil gerne høre mere om digital transformation</h4>
   </div>
-  <form>
+  <form #contactForm="ngForm" (submit)="contactFormSubmitted(contactForm)">
       <div class="form-container">
           <div class="form-row">
-              <input class="form-item" type="text" name="" id="name" placeholder="Navn">
+            <input 
+                class="form-item" 
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="Navn"
+                ngModel
+                required
+                [ngClass]="{ 'is-valid' : contactForm.controls.name?.valid }">
           </div>
           <div class="form-row">
-              <input class="form-item no-spinners" type="number" name="" id="mobile" placeholder="Mobil">
-              <input class="form-item" type="mail" name="" id="mail" placeholder="e-mail">  
+              <input 
+                class="form-item no-spinners" 
+                type="number" 
+                name="mobile" 
+                id="mobile" 
+                placeholder="Mobil"
+                ngModel
+                required
+                [ngClass]="{ 'is-valid' : contactForm.controls.mobile?.valid }">
+              <input 
+                class="form-item" 
+                type="email" 
+                name="mail"     
+                id="mail" 
+                placeholder="e-mail"
+                ngModel
+                required
+                [ngClass]="{ 'is-valid' : contactForm.controls.mail?.valid }">  
           </div>
           <div class="form-row">
-              <input class="form-item no-spinners" type="number" id="postCode" placeholder="Postnr.">
-              <input class="form-item" type="text" name="" id="city" placeholder="By">
+              <input 
+                class="form-item no-spinners" 
+                type="number" id="postCode" 
+                placeholder="Postnr."
+                name="postCode"
+                ngModel
+                required
+                [ngClass]="{ 'is-valid' : contactForm.controls.postCode?.valid }">
+              <input 
+                class="form-item" 
+                type="text" 
+                name="city" 
+                id="city" 
+                placeholder="By"
+                ngModel
+                required
+                [ngClass]="{ 'is-valid' : contactForm.controls.city?.valid }">
           </div>
       </div>  
       <div class="form-button-container">
-          <button id="form-button" onclick="formSubmitted(event)">Ring mig op</button>
+          <button id="form-button" type="submit">Ring mig op</button>
       </div>
   </form>
   <div class="trophy-wrapper">
