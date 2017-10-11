@@ -13,7 +13,8 @@
                   name="name" 
                   id="name" 
                   placeholder="Navn"
-                  formControlName="name">
+                  formControlName="name"
+                  [ngClass]="{ 'is-valid' : contactFormReactive.controls.name?.valid }">
             </div>
             <div *ngIf="!contactFormReactive.controls.name.valid 
               && contactFormReactive.controls.name.touched" 
@@ -26,14 +27,16 @@
                 name="mobile" 
                 id="mobile" 
                 placeholder="Mobil"
-                formControlName="mobile">
+                formControlName="mobile"
+                [ngClass]="{ 'is-valid' : contactFormReactive.controls.mobile?.valid }">
               <input 
                 class="form-item" 
                 type="email" 
                 name="mail"     
                 id="mail" 
                 placeholder="e-mail"
-                formControlName="mail"> 
+                formControlName="mail"
+                [ngClass]="{ 'is-valid' : contactFormReactive.controls.mail?.valid }">
                 <div class="help-wrapper">
                   <div 
                     *ngIf="!contactFormReactive.controls.mobile.valid 
@@ -53,14 +56,16 @@
                 type="number" id="postCode" 
                 placeholder="Postnr."
                 name="postCode"
-                formControlName="postCode">
+                formControlName="postCode"
+                [ngClass]="{ 'is-valid' : contactFormReactive.controls.postCode?.valid }">
               <input 
                 class="form-item" 
                 type="text" 
                 name="city" 
                 id="city" 
                 placeholder="By"
-                formControlName="city">
+                formControlName="city"
+                [ngClass]="{ 'is-valid' : contactFormReactive.controls.city?.valid }">
               <div class="help-wrapper">
                   <div 
                     *ngIf="!contactFormReactive.get('postCode').valid 
