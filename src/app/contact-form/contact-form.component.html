@@ -58,7 +58,7 @@
           </div>
       </div>  
       <div class="form-button-container">
-          <button id="form-button" type="submit">Ring mig op</button>
+          <button id="form-button" type="submit" [disabled]="!contactFormReactive.valid">Ring mig op</button>
       </div>
   </form>
   <div class="trophy-wrapper">

@@ -24,7 +24,6 @@ export class ContactFormReactiveComponent implements OnInit {
 
   contactFormSubmitted(){
     console.log(this.contactFormReactive)
-    console.log(this.contactFormReactive.get('postCode'))
   }
 
 }
